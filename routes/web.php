@@ -42,6 +42,7 @@ Route::get('/post/{post}', [postController::class, "viewSinglePost"]);
 Route::delete('/post/{post}', [postController::class, "delete"])->middleware('can:delete,post');
 Route::get('/post/{post}/edit', [postController::class, "showEditForm"])->middleware('can:update,post');
 Route::put('/post/{post}', [postController::class, "actuallyUpdate"])->middleware('can:update,post');
+Route::get('/search/{term}', [postController::class, "search"]);
 
 
 //profile related routs
